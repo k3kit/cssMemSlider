@@ -5,6 +5,9 @@
 input[type=radio] {
     display: none;
  }
+ body{
+    background: rgb(198, 224, 230);
+ }
 
 .wrapper{
     background: rgb(198, 224, 230);
@@ -17,7 +20,7 @@ input[type=radio] {
     margin: 0 auto ;
     border-radius: 1%;
     height: 100%;
-    width:50%;
+    width: calc(100vw - 45%);
     padding: 5% 7%;
 }
 
@@ -77,7 +80,10 @@ overflow: hidden;
     width: 20%;
     color: rgba(0, 0, 0, 0.555);
     transition: margin-left 900ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-    text-overflow:ellipsis;
+    -webkit-line-clamp: 7; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+
 
 }
 
@@ -103,8 +109,8 @@ overflow: hidden;
     transition: 0.05;
     background: #5d23e4;
 } */
-.slide-img{
-    background: rgba(132, 0, 255, 0.041);
+.slide-img {
+    background: rgb(181 166 236);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -115,6 +121,7 @@ overflow: hidden;
 
 .slide1{
     background-image: url(./img/doge.jpg);
+    
 }
 
 .slide2{
@@ -131,6 +138,8 @@ overflow: hidden;
 
 .slide5{
     background-image: url(./img/cat.jpg);
+    background-size:100% 100%;
+
 }
 #r1:checked ~ .slider .s1{
     margin-left: 0;
@@ -171,4 +180,131 @@ overflow: hidden;
 #r5:checked ~ .wrapepr-text .navigation .bar:nth-child(5) {
     transition: 0.05;
     background: #5d23e4;
+}
+@media(max-width:1120px){
+    .bar{
+        width: 2rem;
+        height: 2rem;
+        border-radius:100%;
+        background-color: rgb(80, 108, 199);
+        margin: 0 10px;
+        border: solid 0.5rem rgb(181 166 236);;
+        transition: all .4s ease;
+        cursor: pointer;
+     }
+
+     .text{
+        font-size: 1rem;
+    }
+}
+@media (max-width:1024px){
+.wrapepr-text{
+    flex-direction: column;
+        align-items: center;
+}
+
+.bar{
+    order: 1;
+}
+
+.text-container{
+    width: 100%;
+    order: 2;
+}
+
+.bar{
+    width: 2rem;
+    height: 2rem;
+    border-radius:100%;
+    background-color: rgb(80, 108, 199);
+    margin: 0 10px;
+    border: solid 0.5rem rgb(181 166 236);;
+    transition: all .4s ease;
+    cursor: pointer;
+ }
+ .text{
+     font-size: 1rem;
+   
+ }
+  .slide-img{
+     background-position: center;
+    background-size: contain;
+    border-radius: 3%;
+ } 
+ 
+.wrapper-content{
+    width: 66%;
+}
+}
+
+@media(max-width:720px){
+    .slider{
+        height: 35%;
+    }
+    .wrapper{height: 75vh;}
+    .wrapper-content{
+        height: 50%;
+    }
+
+    .slider{
+        height: 35%;
+    }
+    .wrapper-content{
+        height: 50%;
+    }
+.bar{
+    width: 2rem;
+    height: 2rem;
+    border-radius:100%;
+    background-color: rgb(80, 108, 199);
+    margin: 0 10px;
+    border: solid 0.5rem rgb(181 166 236);;
+    transition: all .4s ease;
+    cursor: pointer;
+ }
+
+ .text{
+    font-size: 0.8rem;
+    -webkit-line-clamp: 4; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+}
+
+.wrapepr-text{
+    flex-direction: column;
+        align-items: center;
+}
+
+.bar{
+    order: 1;
+}
+
+.text-container{
+    width: 100%;
+    order: 2;
+}
+}
+
+@media (max-width:440px){
+    .text{
+        font-size: 0.9rem;
+    }
+
+
+    .slider{
+        height: 35%;
+    }
+    .wrapper-content{
+        height: 50%;
+    }
+.bar{
+    height: 1.5000rem;
+    width: 1.5000rem;
+
+}
+     .wrapper-content{
+            width: 89%;
+     }
+  
+    
 }
